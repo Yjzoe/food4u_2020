@@ -15,7 +15,7 @@ import javax.persistence.Id;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int no;
+    private Long no;
     private int g_no;
     private String id;
     private int qty;
@@ -24,6 +24,11 @@ public class Cart {
     public Cart(int g_no, String id, int qty) {
         this.g_no = g_no;
         this.id = id;
+        this.qty = qty;
+    }
+
+    public void update(int g_no,int qty) {
+        this.g_no = g_no;
         this.qty = qty;
     }
 }

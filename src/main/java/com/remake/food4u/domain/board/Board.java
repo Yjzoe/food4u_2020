@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Board extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int no;
+    private Long no;
     private String title;
     private String writer;
     private String content;
@@ -25,9 +25,11 @@ public class Board extends BaseTimeEntity {
     private int b_level;
     private int b_step;
     private int hit;
+    private int type;
 
     @Builder
-    public Board(String title, String writer, String content, String fname, int b_ref, int b_level, int b_step, int hit) {
+    public Board(int type, String title, String writer, String content, String fname, int b_ref, int b_level, int b_step, int hit) {
+        this.type = type;
         this.title = title;
         this.writer = writer;
         this.content = content;
@@ -39,9 +41,16 @@ public class Board extends BaseTimeEntity {
     }
 
     //faq + QnA
-    public void faq(String title, String writer, String content, String fname) {
+    public void faq(int type, String title, String writer, String content, String fname) {
+        this.type = type;
         this.title = title;
         this.writer = writer;
+        this.content = content;
+        this.fname = fname;
+    }
+
+    public void update(String title,String content,String fname) {
+        this.title = title;
         this.content = content;
         this.fname = fname;
     }
