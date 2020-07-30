@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
@@ -16,23 +13,30 @@ import javax.persistence.Id;
 public class Orders extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long no;
-    private int g_no;
+    private String no;
+    private Long g_no;
     private int qty;
     private String id;
-    private String addr;
-    private String deli_status;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="delivery")
+    private Deliveries delivery;
     private int paid;
     private int price;
 
+
     @Builder
-    public Orders(int g_no, int qty, String id, String addr, String deli_status, int paid, int price) {
+    public Orders(Long g_no, int qty, String id, Deliveries delivery, int paid, int price) {
         this.g_no = g_no;
         this.qty = qty;
         this.id = id;
-        this.addr = addr;
-        this.deli_status = deli_status;
+        this.delivery = delivery;
         this.paid = paid;
         this.price = price;
+    }
+
+    public void update(int qty, Deliveries delivery, int paid) {
+        this.qty = qty;
+        this.delivery = delivery;
+        this.paid = paid;
     }
 }

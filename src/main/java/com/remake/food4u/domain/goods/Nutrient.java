@@ -13,16 +13,24 @@ public class Nutrient {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long no;
-
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn
     private Goods goods;
-
     private String n_name;
     private Double qty;
 
     @Builder
-    public Nutrient(Long g_no, String n_name, Double qty) {
+    public Nutrient(Goods goods, String n_name, Double qty) {
+        this.goods = goods;
         this.n_name = n_name;
         this.qty = qty;
+    }
+
+    public void setGoods(Goods goods) {
+        if (this.goods != null) {
+            this.goods.removeNutrient(this);
+        }
+        this.goods = goods;
+        goods.addNutrients(this);
     }
 }

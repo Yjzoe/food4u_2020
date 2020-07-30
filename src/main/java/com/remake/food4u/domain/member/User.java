@@ -25,16 +25,19 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private Role role;
 
+    @Column(nullable = true)
+    private String addr;
+
     @Builder
-    public User(String name, String email, Role role) {
+    public User(String name, String email, Role role, String addr) {
         this.name = name;
         this.email = email;
         this.role = role;
+        this.addr = addr;
     }
 
     public User update(String name) {
         this.name = name;
-
         return this;
     }
 

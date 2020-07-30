@@ -17,20 +17,22 @@ public class Reviews extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long no;
-    private int g_no;
-    private String id;
-    private int o_no;
-    private int point;
+    private Long g_no;
+    private String o_no;
     private String title;
     private String content;
     private String photo;
 
     @Builder
-    public Reviews(int g_no, String id, int o_no, int point, String title, String content, String photo) {
+    public Reviews(Long g_no, String o_no, String title, String content, String photo) {
         this.g_no = g_no;
-        this.id = id;
         this.o_no = o_no;
-        this.point = point;
+        this.title = title;
+        this.content = content;
+        this.photo = photo;
+    }
+
+    public void update(String title, String content, String photo) {
         this.title = title;
         this.content = content;
         this.photo = photo;

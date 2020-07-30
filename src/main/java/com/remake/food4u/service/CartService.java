@@ -35,12 +35,6 @@ public class CartService {
         return new CartResponseDto(cart);
     }
 
-    //타입 출력
-    @Transactional
-    public Page<CartResponseDto> findById(String id, Pageable pageable) {
-        return repo.findById(id, pageable).map(CartResponseDto::new);
-    }
-
     @Transactional
     public void delete(Long no) {
         Cart cart = repo.findById(no).orElseThrow(() -> new IllegalArgumentException("장바구니에 상품이 존재하지 않습니다."));
