@@ -20,8 +20,7 @@ public class Nutrient {
     private Double qty;
 
     @Builder
-    public Nutrient(Goods goods, String n_name, Double qty) {
-        this.goods = goods;
+    public Nutrient(String n_name, Double qty) {
         this.n_name = n_name;
         this.qty = qty;
     }
