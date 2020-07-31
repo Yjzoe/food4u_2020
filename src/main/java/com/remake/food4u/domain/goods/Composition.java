@@ -19,7 +19,8 @@ public class Composition {
     private String foodName;
 
     @Builder
-    public Composition(int g_no, String foodName) {
+    public Composition(Goods goods, String foodName) {
+        this.goods = goods;
         this.foodName = foodName;
     }
 

@@ -2,8 +2,8 @@ package com.remake.food4u.config.auth;
 
 import com.remake.food4u.config.auth.dto.OAuthAttributes;
 import com.remake.food4u.config.auth.dto.SessionUser;
-import com.remake.food4u.domain.member.User;
-import com.remake.food4u.domain.member.UserRepository;
+import com.remake.food4u.domain.user.User;
+import com.remake.food4u.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

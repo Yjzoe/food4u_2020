@@ -1,21 +1,20 @@
 package com.remake.food4u.web.dto;
 
+import com.remake.food4u.domain.goods.Composition;
 import com.remake.food4u.domain.goods.Goods;
-import com.remake.food4u.domain.goods.Nutrient;
 
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-public class NutrientResponseDto {
+public class CompositionResponseDto {
     private Long no;
     private Goods goods;
-    private String n_name;
-    private Double qty;
+    private String foodName;
 
-    public NutrientResponseDto(Nutrient entity) {
+    public CompositionResponseDto(Composition entity) {
         this.no = entity.getNo();
         this.goods = entity.getGoods();
-        this.n_name = entity.getN_name();
-        this.qty = entity.getQty();
+        this.foodName = entity.getFoodName();
     }
 }

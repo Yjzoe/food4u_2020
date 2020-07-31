@@ -1,7 +1,7 @@
 package com.remake.food4u.config.auth.dto;
 
-import com.remake.food4u.domain.member.Role;
-import com.remake.food4u.domain.member.User;
+import com.remake.food4u.domain.user.Role;
+import com.remake.food4u.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 

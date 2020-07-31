@@ -1,6 +1,6 @@
 package com.remake.food4u.config.auth;
 
-import com.remake.food4u.domain.member.Role;
+import com.remake.food4u.domain.user.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;

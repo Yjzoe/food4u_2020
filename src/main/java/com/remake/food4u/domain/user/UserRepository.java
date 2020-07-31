@@ -1,6 +1,5 @@
-package com.remake.food4u.domain.member;
+package com.remake.food4u.domain.user;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 

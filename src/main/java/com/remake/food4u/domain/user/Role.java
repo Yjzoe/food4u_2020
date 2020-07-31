@@ -1,4 +1,4 @@
-package com.remake.food4u.domain.member;
+package com.remake.food4u.domain.user;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.remake.food4u.domain.member;
+package com.remake.food4u.domain.user;
 
 import com.remake.food4u.domain.BaseTimeEntity;
 import lombok.Builder;
