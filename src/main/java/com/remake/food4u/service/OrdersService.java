@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -33,6 +34,11 @@ public class OrdersService {
         Orders order = repo.findById(no)
                 .orElseThrow(() -> new IllegalArgumentException("해당 주문이 존재하지 않습니다."));
         return new OrdersResponseDto(order);
+    }
+
+    public List<Orders> findAll() {
+        List<Orders> ordersList = repo.findAll();
+        return ordersList;
     }
 
     @Transactional

@@ -1,3 +1,54 @@
 {{>layout/header}}
-    index
+    <a href=""><img src="/uploads/logo.png" width="200px" align="right"></a>
+    <span id="customerMenu">
+    <br><br>
+    {{#userName}}
+        <span id="user">{{userName}}</span>님 안녕하세요.
+        <a href="">주문/배송조회</a>&nbsp;&nbsp;
+        <a href=""><img src="/uploads/basket-cart-icon-27.png" width="35px"></a>&nbsp;&nbsp;
+        <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+    {{/userName}}
+    {{^userName}}
+        <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+                <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+    {{/userName}}
+	</span>
+<br><br><br><br><br>
+    <div id="mainMenu">
+        <div class="dropdown">
+            <button class="dropbtn">Food4U 소개</button>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">건강식</button>
+            <div class="dropdown-content">
+                <a href="#">샐러드</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">다이어트식단</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">영양정보</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">고객센터</button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+    </div>
 {{>layout/footer}}

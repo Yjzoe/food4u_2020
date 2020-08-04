@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.parser.Entity;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -35,6 +36,11 @@ public class BoardService {
         Board board = repo.findById(no)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 존재하지 않습니다."));
         return new BoardResponseDto(board);
+    }
+
+    public List<Board> findAll() {
+        List<Board> boardList = repo.findAll();
+        return boardList;
     }
 
     //타입 출력

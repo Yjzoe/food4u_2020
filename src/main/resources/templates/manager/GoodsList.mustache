@@ -1,0 +1,32 @@
+{{>layout/header}}
+
+<a href="/manager/insertGoods">상품추가</a>
+
+<table>
+    <tr>
+        <td>상품번호</td>
+        <td>상품이름</td>
+        <td>가격</td>
+        <td>유형</td>
+        <td>상품사진</td>
+        <td>재고수량</td>
+        <td>수정</td>
+        <td>삭제</td>
+    </tr>
+{{#Goods}}
+        <tr>
+            <td id="g_no">{{g_no}}</td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{type}}</td>
+            <td><img src="../resources/goodsUpload/{{fname}}" width="150px"></td>
+            <td>{{stock}}</td>
+            <td><a href="">수정</a></td>
+            <td><a href="">삭제</a></td>
+        </tr>
+{{/Goods}}
+</table>
+{{^Goods}}
+    상품이 없습니다.
+{{/Goods}}
+{{>layout/footer}}

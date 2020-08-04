@@ -1,0 +1,39 @@
+{{>layout/header}}
+<h4>상품등록</h4>
+<hr>
+<form id="f">
+    <input type="hidden" id="g_no" name="g_no" value="0">
+    상품명 <input type="text" id="g_name" name="g_name"><br>
+    가격 <input type="number" id="price" name="price"><br>
+    식품검색 <input type="text" id="food">
+    <button type="button" id="btnFoodAdd">검색</button>
+    <span id="pageNum"><input type="text" id="pageNumber" value="1">페이지/ 총 <span id="totalPage"></span>페이지</span>
+    <br>
+    *클릭시 추가됩니다.
+    <br>
+    <table id="composition2"></table>
+    <br>
+    상품구성 <div id="composition"></div>
+    <div id="foodNutrient" style="border: 1px;"></div>
+    <br/>
+    <input type="hidden" id="kcal">
+    <input type="hidden" id="carbohydrate">
+    <input type="hidden" id="protein">
+    <input type="hidden" id="fat">
+    <input type="hidden" id="sugar">
+    <input type="hidden" id="natrium">
+    <input type="hidden" id="cholesterol">
+    <input type="hidden" id="fatty_acid">
+    <input type="hidden" id="transfatty_acid">
+
+    식단유형 <select id="type" name="type">
+    <option value="0">샐러드</option>
+    <option value="1">한식</option>
+    <option value="2">양식</option>
+    <option value="3">간편식</option>
+</select><br>
+    상품사진 <input type="file" name="uploadFile" id="uploadFile"><br>
+    주문가능수량 <input type="number" id="stock" value="50" name="stock"><br>
+    <input type="button" id="btn_insert" value="등록">
+</form>
+{{>layout/footer}}
