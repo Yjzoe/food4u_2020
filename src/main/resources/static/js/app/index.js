@@ -6,14 +6,30 @@ var main = {
         });
     },
     insert: function () {
-        var formData = new FormData(document.getElementById('f'))
+
+        var img = "";
+        // if ($('#uploadFile').val().length > 0) {
+        //     var x;
+        //     img = x;
+        // }
+
+        var data = {
+            name : $('#name').val(),
+            price: $('#price').val(),
+            type : $('#type').val(),
+            stock : $('#stock').val(),
+            fname : img,
+            nutrients : null,
+            compositions : null
+        };
+        alert(data.name)
         $.ajax({
             url:"insertGoods",
-            data:formData,
+            data:data,
             type:"POST",
-            processData:false,
-            contentType:false,
-            dataType: JSON.stringify(formData),
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(data),
             success:function(re){
                 alert("성공")
                 // addNutrient()

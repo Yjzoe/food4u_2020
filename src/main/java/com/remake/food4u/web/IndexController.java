@@ -31,9 +31,7 @@ public class IndexController {
         }
         return "index";
     }
-
     //manager
-
     @GetMapping("/manager/list")
     public String adminList(Model model, @LoginUser SessionUser user) {
         model.addAttribute("Goods",goodsService.findAll());
@@ -52,15 +50,9 @@ public class IndexController {
         return "/manager/insertGoods";
     }
 
-    @PostMapping("/manager/insertGoods")
-    public Long insertGood(@RequestBody GoodsSaveRequestDto requestDto) {
-        return goodsService.save(requestDto);
-    }
-
     @GetMapping("/manager/OrdersList")
     public String orderList(Model model, @LoginUser SessionUser user) {
         model.addAttribute("Orders", ordersService.findAll());
         return "/manager/OrdersList";
     }
-
 }
