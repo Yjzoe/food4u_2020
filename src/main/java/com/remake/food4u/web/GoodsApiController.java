@@ -6,10 +6,7 @@ import com.remake.food4u.service.*;
 import com.remake.food4u.web.dto.GoodsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -25,5 +22,13 @@ public class GoodsApiController {
     @PostMapping("/manager/insertGoods")
     public Long insertGood(@RequestBody GoodsSaveRequestDto requestDto) {
         return goodsService.save(requestDto);
+    }
+
+    @PostMapping(value="/manager/insertNutrient")
+    @ResponseBody
+    public void insertNutrient(String g_no,String n_name,String qty)
+    {
+//        Long no = goodsService.
+//        int re = dao.insertNutrient(g_no,n_name,qty);
     }
 }

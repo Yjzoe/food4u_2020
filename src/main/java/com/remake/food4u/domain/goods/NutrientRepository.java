@@ -6,5 +6,4 @@ import java.util.List;
 import java.util.Optional;
 
 public interface NutrientRepository extends JpaRepository<Nutrient, Long> {
-    List<Nutrient> findByGoods(Goods goods);
 }
